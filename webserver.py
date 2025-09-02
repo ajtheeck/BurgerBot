@@ -1,8 +1,8 @@
 from flask import Flask
 from threading import Thread
 
-app = (Flask('')
-@app.route('/'))
+app = Flask('')
+@app.route('/')
 def home():
     return ("Discord bot okay")
 
@@ -13,3 +13,4 @@ def keep_alive():
     Thread(target=run)
 
     t.start()
+
