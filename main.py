@@ -1,13 +1,11 @@
 import discord
 from discord.ext import commands
-from dotenv import load_dotenv
 import os
 from pip._internal.utils.misc import tabulate
 from tabulate import tabulate
 import webserver
 
-load_dotenv()
-token = os.environ['DISCORD_TOKEN']
+DISCORD_TOKEN = os.environ['discordkey']
 
 intents = discord.Intents.default()
 intents.message_content = True
@@ -116,7 +114,8 @@ async def commands(ctx):
     await ctx.send(help_text)
 
 webserver.keep_alive()
-bot.run(token)
+bot.run(DISCORD_TOKEN)
+
 
 
 
