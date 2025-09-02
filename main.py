@@ -1,6 +1,5 @@
 import discord
 from discord.ext import commands
-import logging
 from dotenv import load_dotenv
 import os
 from pip._internal.utils.misc import tabulate
@@ -10,7 +9,6 @@ import webserver
 load_dotenv()
 token = os.environ['DISCORD_TOKEN']
 
-handler = logging.FileHandler(filename='discord.log', encoding='utf-8', mode='w')
 intents = discord.Intents.default()
 intents.message_content = True
 intents.members = True
@@ -118,6 +116,7 @@ async def commands(ctx):
     await ctx.send(help_text)
 
 webserver.keep_alive()
-bot.run(token, log_handler=handler, log_level=logging.DEBUG)
+bot.run(token)
+
 
 
