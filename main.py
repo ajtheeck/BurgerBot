@@ -8,7 +8,7 @@ from tabulate import tabulate
 
 
 load_dotenv()
-token = os.environ('DISCORD_TOKEN')
+token = os.environ['DISCORD_TOKEN']
 
 handler = logging.FileHandler(filename='discord.log', encoding='utf-8', mode='w')
 intents = discord.Intents.default()
@@ -119,3 +119,4 @@ async def commands(ctx):
 
 webserver.keep_alive()
 bot.run(token, log_handler=handler, log_level=logging.DEBUG)
+
